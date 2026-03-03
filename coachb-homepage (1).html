@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach B Performance – Sports Psychology | Master Your Mental Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --navy: #0B1525;
+    --navy-mid: #152035;
+    --navy-light: #1E2F47;
+    --white: #F5F2ED;
+    --muted: #8A9BB0;
+    --accent: #4A7FA5;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    background: rgba(11,21,37,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeDown 0.8s ease both;
+  }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.3rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; background: var(--gold); color: var(--navy); padding: 0.55rem 1.4rem; border-radius: 2px; text-decoration: none; transition: background 0.25s; }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(74,127,165,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%); }
+  .hero-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 10rem 5% 6rem 8%; position: relative; z-index: 2; animation: fadeUp 1s ease 0.3s both; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+  .eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+  .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: 0.92; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: italic; color: var(--gold); font-family: 'DM Serif Display', serif; font-weight: 400; text-transform: none; font-size: 0.85em; }
+  .hero-sub { font-size: 1.05rem; line-height: 1.7; color: var(--muted); max-width: 440px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--gold); color: var(--navy); padding: 0.9rem 2.2rem; border-radius: 2px; text-decoration: none; border: none; cursor: pointer; transition: all 0.25s; display: inline-block; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; background: transparent; color: var(--white); padding: 0.9rem 2.2rem; border-radius: 2px; text-decoration: none; border: 1px solid rgba(245,242,237,0.25); transition: all 0.25s; display: inline-block; }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-trust { margin-top: 3rem; display: flex; align-items: center; gap: 1.5rem; padding-top: 2rem; border-top: 1px solid rgba(245,242,237,0.08); }
+  .trust-stat { text-align: center; }
+  .trust-stat strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--gold); line-height: 1; }
+  .trust-stat span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .trust-div { width: 1px; height: 40px; background: rgba(245,242,237,0.12); }
+  .hero-right { display: flex; align-items: flex-end; justify-content: center; position: relative; z-index: 2; padding-top: 8rem; animation: fadeUp 1s ease 0.5s both; }
+  .hero-photo { width: 85%; max-width: 480px; height: 85vh; object-fit: cover; object-position: top; filter: grayscale(20%); border-radius: 4px 4px 0 0; }
+  .hero-badge { position: absolute; bottom: 60px; left: 0; background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.3); border-left: 3px solid var(--gold); padding: 1rem 1.4rem; max-width: 220px; }
+  .hero-badge p { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .hero-badge strong { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.3; color: var(--white); }
+
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 4vw, 3.5rem); text-transform: uppercase; line-height: 1; letter-spacing: -0.01em; margin-bottom: 1.2rem; }
+  .section-title em { font-family: 'DM Serif Display', serif; font-style: italic; font-weight: 400; color: var(--gold); text-transform: none; }
+
+  .serve { background: var(--navy-mid); padding: 6rem 8%; border-top: 1px solid rgba(201,168,76,0.12); border-bottom: 1px solid rgba(201,168,76,0.12); }
+  .serve-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+  .serve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(201,168,76,0.1); }
+  .serve-card { background: var(--navy); padding: 2rem; transition: background 0.3s; }
+  .serve-card:hover { background: var(--navy-light); }
+  .serve-icon { width: 36px; height: 36px; margin-bottom: 1rem; background: rgba(201,168,76,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .serve-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .serve-card p { font-size: 0.85rem; line-height: 1.6; color: var(--muted); }
+
+  .anr { padding: 7rem 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .anr-visual { position: relative; background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.15); padding: 3rem; border-radius: 4px; }
+  .anr-visual::before { content: 'ANR'; position: absolute; top: -1px; right: 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 6rem; font-weight: 900; color: rgba(201,168,76,0.06); line-height: 1; letter-spacing: -0.03em; pointer-events: none; }
+  .anr-pillars { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.5rem; }
+  .pillar { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1.2rem; background: rgba(201,168,76,0.04); border-left: 2px solid var(--gold); transition: background 0.3s; }
+  .pillar:hover { background: rgba(201,168,76,0.08); }
+  .pillar-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.3rem; color: var(--gold); line-height: 1; min-width: 24px; }
+  .pillar h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .pillar p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .anr-content p { font-size: 0.98rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.5rem; }
+  .outcome-list { list-style: none; margin-bottom: 2rem; }
+  .outcome-list li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; line-height: 1.6; color: var(--white); padding: 0.5rem 0; border-bottom: 1px solid rgba(245,242,237,0.06); }
+  .outcome-list li::before { content: '→'; color: var(--gold); font-weight: 700; margin-top: 0.05rem; flex-shrink: 0; }
+
+  .about { background: var(--navy-mid); padding: 7rem 8%; display: grid; grid-template-columns: 5fr 4fr; gap: 5rem; align-items: center; border-top: 1px solid rgba(201,168,76,0.12); }
+  .about-content p { font-size: 0.98rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; }
+  .credential-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0; }
+  .credential { display: flex; flex-direction: column; padding: 1rem 1.2rem; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 2px; min-width: 120px; }
+  .credential strong { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--gold); line-height: 1; }
+  .credential span { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+  .about-img-wrap { position: relative; }
+  .about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; filter: grayscale(15%); border-radius: 2px; }
+  .about-img-accent { position: absolute; bottom: -20px; right: -20px; width: 60%; height: 60%; border: 2px solid rgba(201,168,76,0.25); border-radius: 2px; pointer-events: none; }
+
+  .testimonials { padding: 7rem 8%; border-top: 1px solid rgba(201,168,76,0.12); }
+  .testi-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .testi-card { background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.1); padding: 2rem; border-radius: 2px; transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+  .testi-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-4px); }
+  .testi-card::before { content: '"'; position: absolute; top: -0.5rem; left: 1.2rem; font-family: 'DM Serif Display', serif; font-size: 6rem; color: rgba(201,168,76,0.08); line-height: 1; pointer-events: none; }
+  .testi-card p { font-size: 0.9rem; line-height: 1.75; color: var(--white); margin-bottom: 1.5rem; position: relative; z-index: 1; }
+  .testi-author { display: flex; align-items: center; gap: 0.75rem; }
+  .testi-author strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; }
+  .testi-author span { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; }
+  .testi-dot { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1rem; color: var(--navy); flex-shrink: 0; }
+
+  .speaking { background: var(--navy-mid); padding: 7rem 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; border-top: 1px solid rgba(201,168,76,0.12); }
+  .speaking-content p { font-size: 0.98rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.5rem; }
+  .speaking-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+  .tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.9rem; border: 1px solid rgba(201,168,76,0.3); color: var(--gold); border-radius: 2px; }
+  .speaking-visual { background: var(--navy); border: 1px solid rgba(201,168,76,0.1); padding: 3rem; border-radius: 4px; text-align: center; }
+  .speak-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 5rem; color: var(--gold); line-height: 1; letter-spacing: -0.03em; }
+  .speak-label { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; }
+  .speak-list { list-style: none; text-align: left; }
+  .speak-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: var(--white); padding: 0.65rem 0; border-bottom: 1px solid rgba(245,242,237,0.06); }
+  .speak-list li::before { content: '✦'; color: var(--gold); font-size: 0.5rem; }
+
+  .contact { padding: 7rem 8%; border-top: 1px solid rgba(201,168,76,0.12); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info p { font-size: 0.98rem; line-height: 1.8; color: var(--muted); margin-bottom: 2rem; max-width: 420px; }
+  .contact-detail { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: var(--muted); margin-bottom: 0.75rem; }
+  .contact-detail span { color: var(--gold); }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .form-group input, .form-group select, .form-group textarea { background: var(--navy-mid); border: 1px solid rgba(245,242,237,0.1); color: var(--white); padding: 0.85rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; border-radius: 2px; outline: none; transition: border-color 0.25s; width: 100%; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .form-group select option { background: var(--navy-mid); }
+
+  footer { background: #070E1A; padding: 2.5rem 8%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.12); flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: 0.78rem; color: var(--muted); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 9rem 6% 5rem; }
+    .serve-inner, .anr, .about, .speaking, .contact { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#"><span>COACH B</span> PERFORMANCE</a>
+  <ul class="nav-links">
+    <li><a href="#program">Program</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Book a Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-left">
+    <p class="eyebrow">Sports Psychology Consultant</p>
+    <h1>Master<br>Your<br><em>Mental Game</em></h1>
+    <p class="hero-sub">Elite performance coaching for high school, college, and professional athletes. Train your mind at the same level you train your body.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#contact">Book a Free Consult</a>
+      <a class="btn-secondary" href="#program">Explore the ANR Program</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-stat"><strong>Top 3</strong><span>World Youth Ranking</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-stat"><strong>30+</strong><span>Years in Sport</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-stat"><strong>PhD</strong><span>Doctoral Researcher</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div style="position:relative;width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;">
+      <img class="hero-photo"
+        src="https://static.wixstatic.com/media/08c7b9_02cfd389e9d64fd0b4d4ebf5aadb4a2e~mv2.jpg/v1/crop/x_0,y_44,w_2156,h_2233/fill/w_560,h_580,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/7F71510A-58E9-4A90-9CB6-E814CC54C92B_1_201_a_edited.jpg"
+        alt="Coach B – Belinda Halloran">
+      <div class="hero-badge">
+        <p>Signature Program</p>
+        <strong>Athlete Neuroplasticity Reset™</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I SERVE -->
+<section class="serve reveal" id="serve">
+  <div class="serve-inner">
+    <div>
+      <p class="section-label">Who I Work With</p>
+      <h2 class="section-title">Built for <em>Elite</em> Athletes</h2>
+      <p style="font-size:0.95rem;line-height:1.8;color:var(--muted);margin-top:1rem;">Whether you're pushing for a D1 scholarship, competing professionally, or supporting the athletes in your life — this is for you.</p>
+    </div>
+    <div class="serve-grid">
+      <div class="serve-card"><div class="serve-icon">🏆</div><h3>High School Athletes</h3><p>Build the mental edge for recruitment, pressure performance, and D1 readiness.</p></div>
+      <div class="serve-card"><div class="serve-icon">🎓</div><h3>College Athletes</h3><p>Navigate the intensity of collegiate sport while protecting your long-term wellbeing.</p></div>
+      <div class="serve-card"><div class="serve-icon">⚡</div><h3>Pro Athletes</h3><p>Elite-level mental conditioning to sustain performance at the highest stage.</p></div>
+      <div class="serve-card"><div class="serve-icon">🧭</div><h3>Coaches &amp; Parents</h3><p>Understand how to positively shape an athlete's mindset and reduce performance pressure.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANR PROGRAM -->
+<section class="anr reveal" id="program">
+  <div class="anr-visual">
+    <p class="section-label">The Program</p>
+    <h2 class="section-title">Athlete<br><em>Neuroplasticity</em><br>Reset</h2>
+    <p style="font-size:0.82rem;color:var(--muted);margin:0.75rem 0 1.5rem;line-height:1.6;">A proactive, science-backed mental performance system — not reactive therapy, but elite psychological training.</p>
+    <div class="anr-pillars">
+      <div class="pillar"><span class="pillar-num">01</span><div><h4>Mindset Architecture</h4><p>Rewire how you respond to pressure, failure, and high-stakes moments.</p></div></div>
+      <div class="pillar"><span class="pillar-num">02</span><div><h4>Pre-Competition Protocols</h4><p>Custom routines to achieve peak mental state consistently before every event.</p></div></div>
+      <div class="pillar"><span class="pillar-num">03</span><div><h4>Focus &amp; Resilience Training</h4><p>Behavioral science tools to sustain concentration and recover from setbacks.</p></div></div>
+      <div class="pillar"><span class="pillar-num">04</span><div><h4>Life Skills Integration</h4><p>Mental frameworks that extend beyond sport into academics, relationships, and career.</p></div></div>
+    </div>
+  </div>
+  <div class="anr-content">
+    <p class="section-label">What You'll Gain</p>
+    <h2 class="section-title">Real <em>Outcomes</em><br>for Real Athletes</h2>
+    <p>The ANR program is built on decades of elite athletic experience combined with academic training in sports psychology and behavioral science. It's tailored to your sport, your stage, and your goals — not a generic template.</p>
+    <ul class="outcome-list">
+      <li>Eliminate performance anxiety and pre-competition dread</li>
+      <li>Develop unshakeable focus under pressure</li>
+      <li>Recover faster from mistakes during competition</li>
+      <li>Build a confident, resilient athletic identity</li>
+      <li>Strengthen coach, parent, and teammate communication</li>
+      <li>Create mental performance skills that outlast your career</li>
+    </ul>
+    <a class="btn-primary" href="#contact">Start Your Journey</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about reveal" id="about">
+  <div class="about-content">
+    <p class="section-label">About Coach B</p>
+    <h2 class="section-title">Belinda<br><em>Halloran</em></h2>
+    <div class="credential-row">
+      <div class="credential"><strong>Top 10</strong><span>Pro World Ranking</span></div>
+      <div class="credential"><strong>AASP</strong><span>Member</span></div>
+      <div class="credential"><strong>PhD</strong><span>Candidate 2029</span></div>
+    </div>
+    <p>I'm a California-based Sports Psychology Consultant who brings something rare: I've actually lived the elite athlete experience. As a retired Australian professional triathlete, I was world-ranked Top 3 as a youth competitor, Top 10 as a professional, and the youngest-ever Ironman winner in history.</p>
+    <p>I pair that lived experience with formal training in sports psychology and behavioral science — plus an approachable style that helps athletes open up and do real work. I'm also a mother of four competitive kids, giving me a unique lens on the family dynamics that shape athlete mindset.</p>
+    <p>In 2025 I commenced my doctoral degree, bringing cutting-edge research directly into the program you'll be using.</p>
+    <a class="btn-secondary" href="#contact" style="margin-top:1rem;">Work with Coach B →</a>
+  </div>
+  <div class="about-img-wrap">
+    <img class="about-img"
+      src="https://static.wixstatic.com/media/08c7b9_7aa7a37562dc4196ad8f8faee2e0fad8~mv2.jpeg/v1/fill/w_338,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4434.jpeg"
+      alt="Belinda Halloran Coach B">
+    <div class="about-img-accent"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials reveal" id="testimonials">
+  <div class="testi-header">
+    <div>
+      <p class="section-label">Athlete Stories</p>
+      <h2 class="section-title">What <em>Athletes</em> Say</h2>
+    </div>
+    <a class="btn-secondary" href="#contact">See All Testimonials →</a>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <p>"Coach B completely changed how I approach competition. I used to spiral after any mistake — now I have actual tools to reset mid-game. My coach noticed the difference before I even mentioned it."</p>
+      <div class="testi-author">
+        <div class="testi-dot">J</div>
+        <div><strong>Jordan M.</strong><span>D1 Soccer · University of Oregon</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p>"I was ready to quit my sport after a rough sophomore season. Working with Coach B helped me understand the mental game was the missing piece — not my fitness. I went on to have my best season ever."</p>
+      <div class="testi-author">
+        <div class="testi-dot">A</div>
+        <div><strong>Alicia T.</strong><span>Collegiate Swimmer · NCAA Division I</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p>"As a parent I didn't realise how much my sideline behaviour affected my son. Coach B coached me as much as she coached him — our whole family dynamic around sport improved. Life-changing."</p>
+      <div class="testi-author">
+        <div class="testi-dot">R</div>
+        <div><strong>Robert K.</strong><span>Parent of D1 Lacrosse Athlete</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section class="speaking reveal" id="speaking">
+  <div class="speaking-visual">
+    <div class="speak-num">30+</div>
+    <div class="speak-label">Years of Public Speaking</div>
+    <ul class="speak-list">
+      <li>Corporate &amp; Leadership Events</li>
+      <li>Athletic Programs &amp; Teams</li>
+      <li>Charity &amp; Community Events</li>
+      <li>Youth Sports Organizations</li>
+      <li>Educational Institutions</li>
+    </ul>
+  </div>
+  <div class="speaking-content">
+    <p class="section-label">Speaking</p>
+    <h2 class="section-title">Inspire Your <em>Audience</em></h2>
+    <p>Invite Coach B to your next event. With a story spanning child athlete prodigy, world-ranked professional, Deputy Mayor of Sydney, and doctoral researcher — Belinda delivers talks that are authentic, motivating, and immediately actionable.</p>
+    <div class="speaking-tags">
+      <span class="tag">Athletic Performance</span>
+      <span class="tag">Resilience</span>
+      <span class="tag">Youth Mindset</span>
+      <span class="tag">Leadership</span>
+      <span class="tag">Women in Sport</span>
+    </div>
+    <a class="btn-primary" href="#contact">Enquire About Speaking</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="contact-info">
+    <p class="section-label">Get Started</p>
+    <h2 class="section-title">Book a Free<br><em>Consultation</em></h2>
+    <p>Every athlete journey begins with a confidential conversation. Reach out today for a no-obligation introductory meeting — worldwide online or in-person in the Bay Area, California.</p>
+    <div class="contact-detail"><span>📍</span> Bay Area, California — Worldwide Online</div>
+    <div class="contact-detail"><span>🔒</span> All sessions are fully confidential</div>
+    <div class="contact-detail"><span>🌐</span> Available across all time zones</div>
+    <div class="contact-detail"><span>⚡</span> Response within 24 hours</div>
+  </div>
+  <form class="contact-form" onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input type="text" placeholder="Alex" required></div>
+      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Johnson" required></div>
+    </div>
+    <div class="form-group"><label>Email Address</label><input type="email" placeholder="alex@email.com" required></div>
+    <div class="form-group">
+      <label>I Am A...</label>
+      <select>
+        <option value="">Select your role</option>
+        <option>High School Athlete</option>
+        <option>College Athlete</option>
+        <option>Professional Athlete</option>
+        <option>Coach</option>
+        <option>Parent of an Athlete</option>
+        <option>Event Organizer (Speaking)</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Sport</label><input type="text" placeholder="e.g. Soccer, Swimming, Basketball..."></div>
+    <div class="form-group"><label>Tell Me About Your Goals</label><textarea placeholder="What would you like to work on? What's holding you back?"></textarea></div>
+    <button class="btn-primary" type="submit" style="width:100%;text-align:center;font-size:1rem;padding:1.1rem;">Send Message →</button>
+    <p id="form-msg" style="display:none;color:var(--gold);font-size:0.85rem;text-align:center;margin-top:0.5rem;">✓ Message sent! Coach B will be in touch within 24 hours.</p>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Coach B Performance · Belinda Halloran · California, USA</p>
+  <div class="footer-links">
+    <a href="#program">ANR Program</a>
+    <a href="#about">About</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => io.observe(r));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-msg').style.display = 'block';
+    e.target.querySelectorAll('input, textarea, select, button').forEach(el => el.disabled = true);
+  }
+</script>
+</body>
+</html>
