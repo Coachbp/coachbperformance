@@ -345,26 +345,25 @@
     <div class="contact-detail"><span>🌐</span> Available across all time zones</div>
     <div class="contact-detail"><span>⚡</span> Response within 24 hours</div>
   </div>
- <form class="contact-form" action="https://formspree.io/f/mgolgypb" method="POST">
-    <div class="form-row">
-      <div class="form-group"><label>First Name</label><input type="text" placeholder="Alex" required></div>
-      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Johnson" required></div>
-    </div>
-    <div class="form-group"><label>Email Address</label><input type="email" placeholder="alex@email.com" required></div>
-    <div class="form-group">
-      <label>I Am A...</label>
-      <select>
-        <option value="">Select your role</option>
-        <option>High School Athlete</option>
-        <option>College Athlete</option>
-        <option>Professional Athlete</option>
-        <option>Coach</option>
-        <option>Parent of an Athlete</option>
-        <option>Event Organizer (Speaking)</option>
-      </select>
-    </div>
-    <div class="form-group"><label>Sport</label><input type="text" placeholder="e.g. Soccer, Swimming, Basketball..."></div>
-    <div class="form-group"><label>Tell Me About Your Goals</label><textarea placeholder="What would you like to work on? What's holding you back?"></textarea></div>
+ <<div class="form-row">
+  <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Alex" required></div>
+  <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Johnson" required></div>
+</div>
+<div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="alex@email.com" required></div>
+<div class="form-group">
+  <label>I Am A...</label>
+  <select name="role">
+    <option value="">Select your role</option>
+    <option>High School Athlete</option>
+    <option>College Athlete</option>
+    <option>Professional Athlete</option>
+    <option>Coach</option>
+    <option>Parent of an Athlete</option>
+    <option>Event Organizer (Speaking)</option>
+  </select>
+</div>
+<div class="form-group"><label>Sport</label><input type="text" name="sport" placeholder="e.g. Soccer, Swimming, Basketball..."></div>
+<div class="form-group"><label>Tell Me About Your Goals</label><textarea name="message" placeholder="What would you like to work on?"></textarea></div>>
     <button class="btn-primary" type="submit" style="width:100%;text-align:center;font-size:1rem;padding:1.1rem;">Send Message →</button>
     <p id="form-msg" style="display:none;color:var(--gold);font-size:0.85rem;text-align:center;margin-top:0.5rem;">✓ Message sent! Coach B will be in touch within 24 hours.</p>
   </form>
